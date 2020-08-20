@@ -1,0 +1,11 @@
+{
+  "presets": ["@babel/preset-react"],
+  "env": {
+    "production": {
+      "plugins": ["babel-plugin-transform-react-remove-prop-types"]
+    },
+    "test": {
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    }
+  }
+}

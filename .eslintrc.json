@@ -1,0 +1,64 @@
+{
+  "env": {
+    "es2020": true
+  },
+  "plugins": ["prettier"],
+  "extends": ["prettier"],
+  "rules": {
+    "curly": "error",
+    "dot-notation": "error",
+    "id-length": "error",
+    "no-const-assign": "error",
+    "no-dupe-class-members": "error",
+    "no-else-return": "error",
+    "no-inner-declarations": "error",
+    "no-lonely-if": "error",
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignore": [-1, 0, 1]
+      }
+    ],
+    "no-shadow": "error",
+    "no-undef": "error",
+    "no-unneeded-ternary": "error",
+    "no-unused-expressions": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    "no-useless-return": "error",
+    "no-var": "error",
+    "one-var": ["error", "never"],
+    "prefer-arrow-callback": "error",
+    "prefer-const": "error",
+    "prefer-promise-reject-errors": "error",
+    "prettier/prettier": "error",
+    "sort-keys": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": true
+      }
+    ],
+    "sort-vars": "error",
+    "strict": ["error", "global"]
+  },
+  "overrides": [
+    {
+      "files": "*test*.js",
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["scripts/**/*.js", "webpack.config.js"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
+}

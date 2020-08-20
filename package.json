@@ -1,0 +1,63 @@
+{
+  "name": "github-diff-manager",
+  "version": "1.0.0",
+  "author": "Chris Santamaria <chris@santamaria.me>",
+  "license": "MIT",
+  "webExt": {
+    "sourceDir": "extension/firefox/"
+  },
+  "scripts": {
+    "build:chrome": "PLATFORM=chrome node scripts/build.js",
+    "build:firefox": "PLATFORM=firefox node scripts/build.js",
+    "build": "yarn build:chrome && yarn build:firefox",
+    "lint": "yarn test:lint --fix",
+    "format": "prettier . --write",
+    "build:chrome:dev": "PLATFORM=chrome node scripts/start.js",
+    "build:firefox:dev": "PLATFORM=firefox node scripts/start.js",
+    "launch:firefox": "web-ext run",
+    "test": "yarn test:format && yarn test:lint",
+    "test:format": "prettier . --check",
+    "test:lint": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.js\""
+  },
+  "dependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.1",
+    "@babel/plugin-transform-modules-commonjs": "7.10.4",
+    "@babel/preset-react": "7.10.4",
+    "archiver": "5.0.0",
+    "babel-loader": "8.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.4.24",
+    "clean-webpack-plugin": "3.0.0",
+    "eslint": "7.7.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react-hooks": "4.1.0",
+    "fs-extra": "9.0.1",
+    "html-webpack-plugin": "4.3.0",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "merge-json-webpack-plugin": "1.2.0",
+    "prettier": "2.0.5",
+    "react-devtools": "4.8.2",
+    "webextension-polyfill": "0.6.0",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12"
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --ignore-path .gitignore --ignore-path .prettierignore --fix"
+    ],
+    "*.{md,css,scss,html,json,yml}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

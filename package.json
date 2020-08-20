@@ -44,7 +44,7 @@
     "webpack-cli": "3.3.12"
   },
   "lint-staged": {
-    "*.{js,md,css,scss,html,json,yml}": [
+    "*.{js,md,html,json,yml}": [
       "yarn format"
     ]
   },

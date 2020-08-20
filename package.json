@@ -10,14 +10,11 @@
     "build:chrome": "PLATFORM=chrome node scripts/build.js",
     "build:firefox": "PLATFORM=firefox node scripts/build.js",
     "build": "yarn build:chrome && yarn build:firefox",
-    "lint": "yarn test:lint --fix",
-    "format": "prettier . --write",
-    "build:chrome:dev": "PLATFORM=chrome node scripts/start.js",
-    "build:firefox:dev": "PLATFORM=firefox node scripts/start.js",
+    "dev:chrome": "PLATFORM=chrome node scripts/start.js",
+    "dev:firefox": "PLATFORM=firefox node scripts/start.js",
     "launch:firefox": "web-ext run",
-    "test": "yarn test:format && yarn test:lint",
-    "test:format": "prettier . --check",
-    "test:lint": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.js\""
+    "lint": "eslint --ignore-path .gitignore \"**/*.js\"",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "react": "16.13.1",
@@ -48,11 +45,8 @@
     "webpack-cli": "3.3.12"
   },
   "lint-staged": {
-    "*.{js}": [
-      "eslint --ignore-path .gitignore --ignore-path .prettierignore --fix"
-    ],
-    "*.{md,css,scss,html,json,yml}": [
-      "prettier --write"
+    "*.{js,md,css,scss,html,json,yml}": [
+      "yarn format"
     ]
   },
   "husky": {

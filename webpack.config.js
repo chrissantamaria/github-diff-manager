@@ -1,6 +1,5 @@
 'use strict';
 
-const TerserPlugin = require('terser-webpack-plugin'); // included as a dependency of webpack
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -29,18 +28,6 @@ module.exports = ({ outDir, env }) => {
           test: /\.js$/,
           use: 'babel-loader',
         },
-      ],
-    },
-    optimization: {
-      minimizer: [
-        new TerserPlugin({
-          terserOptions: {
-            extractComments: false,
-
-            // https://github.com/webpack-contrib/terser-webpack-plugin/issues/107
-            output: { ascii_only: true },
-          },
-        }),
       ],
     },
     output: {

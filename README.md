@@ -12,7 +12,7 @@ This use case is very tailored for my workflow but in the future I'd like to mak
 
 ## Todo
 
-- Fully handle GitHub page transitions (some SPA magic is happening preventing the content script from always running)
+- ~~Fully handle GitHub page transitions (some SPA magic is happening preventing the content script from always running)~~
 - Dynamic regex filename matching from config
 - Visual config editor from options
 - Find more elegant way of targeting filename / reviewed toggle button

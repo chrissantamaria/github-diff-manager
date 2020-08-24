@@ -1,6 +1,5 @@
 {
   "name": "GitHub Diff Manager",
-  "version": "1.0.0",
   "manifest_version": 2,
   "description": "Tool to help manage PR review",
   "options_ui": {

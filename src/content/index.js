@@ -1,7 +1,7 @@
 // example valid string: /chrissantamaria/github-diff-manager/pull/1/files
 const pathRegex = /^\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/pull\/\d+\/files$/;
-// example valid string: foo.yml
-const fileRegex = /^.+\.yml$/;
+// example valid string: foo.snap
+const fileRegex = /^.+\.snap$/;
 
 if (pathRegex.test(window.location.pathname)) {
   const files = [

@@ -1,9 +1,4 @@
-// example valid string: /chrissantamaria/github-diff-manager/pull/1/files
-const pathRegex = /^\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/pull\/\d+\/files$/;
-// example valid string: foo.snap
-const fileRegex = /^.+\.snap$/;
-
-if (pathRegex.test(window.location.pathname)) {
+const checkFiles = () => {
   const files = [
     ...document.querySelector('.js-diff-progressive-container').children,
   ];
@@ -12,7 +7,7 @@ if (pathRegex.test(window.location.pathname)) {
     const filename = file.querySelector('.file-info .link-gray-dark').innerText;
 
     // Example pattern matching, will replace with config
-    if (fileRegex.test(filename)) {
+    if (/^.+\.snap$/.test(filename)) {
       const reviewedToggleElement = file.querySelector(
         '.js-reviewed-toggle input'
       );
@@ -22,4 +17,6 @@ if (pathRegex.test(window.location.pathname)) {
       }
     }
   });
-}
+};
+
+export default checkFiles;

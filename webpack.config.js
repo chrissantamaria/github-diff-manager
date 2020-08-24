@@ -15,7 +15,7 @@ module.exports = ({ outDir, env }) => {
   return {
     devtool: false,
     entry: {
-      content: './src/content/index.js',
+      background: './src/background/index.js',
       options: isDevMode
         ? ['react-devtools', './src/options/index.js']
         : './src/options/index.js',

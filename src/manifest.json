@@ -7,12 +7,9 @@
     "open_in_tab": false,
     "chrome_style": true
   },
-  "permissions": ["storage"],
-  "content_scripts": [
-    {
-      "matches": ["https://github.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
-    }
-  ]
+  "permissions": ["storage", "webNavigation", "https://github.com/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
 }
